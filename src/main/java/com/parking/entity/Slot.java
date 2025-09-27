@@ -3,7 +3,7 @@ package com.parking.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -40,7 +40,7 @@ public class Slot {
 	    @ManyToOne(fetch = FetchType.LAZY)
 	    @JoinColumn(name = "floor_id", nullable = false)
 	    @NotNull(message = "Floor must be specified")
-	    @JsonManagedReference
+	    @JsonBackReference
 	    private Floor floor;
 	    
 	    

@@ -2,6 +2,8 @@ package com.parking.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +23,7 @@ public class Floor {
 	private String name;
 	
 	 @OneToMany(mappedBy = "floor", cascade = CascadeType.ALL)
+	 @JsonManagedReference
 	private List<Slot> slots;
 	
 	public Floor() { }
